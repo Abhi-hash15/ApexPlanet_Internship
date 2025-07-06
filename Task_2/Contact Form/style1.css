@@ -1,0 +1,41 @@
+.form-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to right top, #e0f7fa, #fce4ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at center, #ffffff55, transparent);
+  top: -200px;
+  left: -200px;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.form-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, #ffccf955, transparent);
+  bottom: -150px;
+  right: -150px;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.contact-form {
+  z-index: 1; /* ensures the form stays above the background shapes */
+  position: relative;
+}
+
+

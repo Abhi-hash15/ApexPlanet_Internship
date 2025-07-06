@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <form id="contactForm" class="contact-form">
+            <h2>📬 Get in Touch</h2>
+            <p>We'd love to hear from you! Fill out the form below and we'll respond soon.</p>
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" placeholder="john@example.com" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent actual form submission
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            alert("Form submitted successfully!");
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+
+
+</body>
+
+</html>
